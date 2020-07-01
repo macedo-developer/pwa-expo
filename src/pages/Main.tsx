@@ -20,7 +20,6 @@ const Main: React.FC = () => {
     fetch("https://api.github.com/orgs/rocketseat/members").then((response) => {
       response.json().then((data) => {
         setMembers(data);
-        console.log(data);
       });
     });
   }, []);
