@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { Camera as ExpoCamera } from "expo-camera";
 import * as Device from "expo-device";
 
+import { Feather } from "@expo/vector-icons";
+
 const Camera: React.FC = () => {
   const [hasPermission, setHasPermission] = useState(false);
   const [type, setType] = useState(ExpoCamera.Constants.Type.back);
@@ -63,7 +65,7 @@ const Camera: React.FC = () => {
                 color: "white",
               }}
             >
-              Flip
+              <Feather name="camera" size={20} color="#fff" />
             </Text>
           </TouchableOpacity>
         </View>
