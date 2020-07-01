@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, Share, Button } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { Camera as ExpoCamera } from "expo-camera";
 import * as Device from "expo-device";
 
@@ -55,9 +55,15 @@ const Camera: React.FC = () => {
               );
             }}
           >
-            <Text style={{ fontSize: 18, marginBottom: 10, color: "white" }}>
-              {" "}
-              Flip{" "}
+            <Text
+              style={{
+                fontSize: 18,
+                marginBottom: 20,
+                marginLeft: 10,
+                color: "white",
+              }}
+            >
+              Flip
             </Text>
           </TouchableOpacity>
         </View>

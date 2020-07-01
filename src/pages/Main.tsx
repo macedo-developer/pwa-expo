@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  Image,
-  StyleSheet,
-  Platform,
-} from "react-native";
+import { View, Text, FlatList, Image, StyleSheet } from "react-native";
 
 interface Member {
   login: string;
