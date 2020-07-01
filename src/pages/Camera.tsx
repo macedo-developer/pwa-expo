@@ -9,8 +9,6 @@ const Camera: React.FC = () => {
   const [hasPermission, setHasPermission] = useState(false);
   const [type, setType] = useState(ExpoCamera.Constants.Type.back);
 
-  console.log(Device.brand);
-
   useEffect(() => {
     (async () => {
       if (Device.brand === null) {

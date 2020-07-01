@@ -6,13 +6,19 @@ import { Feather } from "@expo/vector-icons";
 
 import Main from "./pages/Main";
 import Camera from "./pages/Camera";
+import Books from "./pages/Books";
 
 const Tab = createBottomTabNavigator();
 
 export default function Routes() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: "#36a397",
+          inactiveTintColor: "#b8b8b8",
+        }}
+      >
         <Tab.Screen
           options={{
             tabBarIcon: ({ color }) => (
@@ -21,6 +27,15 @@ export default function Routes() {
           }}
           name="Home"
           component={Main}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Feather name="book" size={20} color={color} />
+            ),
+          }}
+          name="Books"
+          component={Books}
         />
         <Tab.Screen
           options={{
