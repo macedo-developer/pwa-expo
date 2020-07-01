@@ -24,7 +24,6 @@ const Main: React.FC = () => {
       });
     });
   }, []);
-  console.log(Platform.OS);
 
   return (
     <FlatList
