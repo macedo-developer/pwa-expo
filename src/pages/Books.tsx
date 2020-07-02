@@ -8,6 +8,7 @@ import {
   Image,
   FlatList,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { Feather } from "@expo/vector-icons";
 
@@ -21,9 +22,14 @@ interface ResultBooks {
       thumbnail: string;
     };
   };
+  accessInfo: {
+    webReaderLink: string;
+  };
 }
 
 const Books: React.FC = () => {
+  const navigation = useNavigation();
+
   const [book, setBook] = useState("");
   const [result, setResult] = useState<ResultBooks[]>([]);
   const [apiKey, setApiKey] = useState(
@@ -56,6 +62,10 @@ const Books: React.FC = () => {
         setResult(response.data.items);
         setLoading(false);
       });
+  }
+
+  function handleDetails(item: ResultBooks) {
+    navigation.navigate("Details", item);
   }
 
   return (
@@ -105,6 +115,9 @@ const Books: React.FC = () => {
                 }
 
                 <Text style={styles.titleBook}>{item.volumeInfo.title}</Text>
+                <TouchableOpacity onPress={() => handleDetails(item)}>
+                  <Text>Detalhes</Text>
+                </TouchableOpacity>
               </View>
             )}
           />
@@ -178,7 +191,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#fff",
     marginTop: 8,
-    fontSize: 12,
+    fontSize: 14,
   },
   imageBook: {
     width: 72,
